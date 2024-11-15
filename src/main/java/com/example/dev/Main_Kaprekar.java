@@ -11,8 +11,7 @@ import java.util.Arrays;
 public class Main_Kaprekar {
 
 public static void main(String[] args){
-    int res = kaprekarOp(3524);
-    System.out.println(res);
+
 }
 
 public static int kaprekarOp(int number){
@@ -43,6 +42,22 @@ public static int kaprekarOp(int number){
     int menor =  digitos[3]*1000 + digitos[2]*100 + digitos[1]*10 + digitos[0];
 
     return mayor-menor;
+}
+
+/*Este metodo paso correctamente de la prueba 5 hasta la 7
+  la creacion del metodo se hizo en la rama ftr_operation5
+*/
+public static int itKaprekar(int numero) {
+    //contador de iteraciones
+    int iteracion=0;
+
+    //llama a la funcion de krapekar hasta que este devuelva 6174
+    while (numero!= 6174){
+        numero = kaprekarOp(numero);
+        iteracion++;
+    }
+
+    return iteracion;
 }
 
 }
