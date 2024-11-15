@@ -17,23 +17,17 @@ public static void main(String[] args){
 
 public static int kaprekarOp(int number){
 
-    int[] digitos = new int[4];
-
-    //convierte el entero a arreglo
-    int i = digitos.length - 1;
-    while (number > 0) {
-        digitos[i] = number%10;
-        number = number / 10;
-        i--;
-    }
-
+    String num = String.valueOf(number);
+    //separa los digitos en char
+    char[] digitos = num.toCharArray();
     //ordena de mayor a menor los numeros del arreglo
     for (int l = 0; l < digitos.length-1; l++) {
         for (int j = l+1; j < digitos.length ; j++) {
             if (digitos[j]>digitos[l]){
-                int aux = digitos[j];
+                int aux1 = digitos[j];
+                String aux = String.valueOf(aux1);
                 digitos[j] = digitos[l];
-                digitos[l] = aux;
+                digitos[l] = aux.charAt(0);
             }
         }
     }
