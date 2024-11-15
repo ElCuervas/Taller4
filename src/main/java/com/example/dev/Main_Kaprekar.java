@@ -15,19 +15,28 @@ public static void main(String[] args){
     System.out.println(res);
 }
 
+/*este metodo pasa las primeras 4 pruebas
+  Su implementacion fue hecha en la rama ftr_Operation1
+*/
 public static int kaprekarOp(int number){
 
-    String num = String.valueOf(number);
-    //separa los digitos en char
-    char[] digitos = num.toCharArray();
+    int[] digitos = new int[4];
+
+    //convierte el entero a arreglo
+    int i = digitos.length - 1;
+    while (number > 0) {
+        digitos[i] = number%10;
+        number = number / 10;
+        i--;
+    }
+
     //ordena de mayor a menor los numeros del arreglo
     for (int l = 0; l < digitos.length-1; l++) {
         for (int j = l+1; j < digitos.length ; j++) {
             if (digitos[j]>digitos[l]){
-                int aux1 = digitos[j];
-                String aux = String.valueOf(aux1);
+                int aux = digitos[j];
                 digitos[j] = digitos[l];
-                digitos[l] = aux.charAt(0);
+                digitos[l] = aux;
             }
         }
     }
