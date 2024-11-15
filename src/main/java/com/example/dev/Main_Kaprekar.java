@@ -14,6 +14,9 @@ public static void main(String[] args){
 
 }
 
+/*este metodo pasa las primeras 4 pruebas
+  Su implementacion fue hecha en la rama ftr_Operation1
+*/
 public static int kaprekarOp(int number){
 
     int[] digitos = new int[4];
